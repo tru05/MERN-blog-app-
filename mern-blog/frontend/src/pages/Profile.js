@@ -33,7 +33,7 @@ export default function Profile() {
       <div className="col-md-4">
         <div className="card border-0 shadow-sm rounded-4 text-center p-4 mb-4">
           {user?.avatar ? (
-            <img src={`http://localhost:5000${user.avatar}`} className="rounded-circle mx-auto mb-3" width="120" height="120" style={{ objectFit: 'cover' }} alt="avatar" />
+            <img src={`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}${post.image}`} className="rounded-circle mx-auto mb-3" width="120" height="120" style={{ objectFit: 'cover' }} alt="avatar" />
           ) : (
             <div className="avatar-placeholder rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center bg-primary text-white fs-1" style={{ width: 120, height: 120 }}>
               {user?.name?.charAt(0).toUpperCase()}

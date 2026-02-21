@@ -58,7 +58,7 @@ export default function PostDetail() {
         <Alert message={error} onClose={() => setError('')} />
 
         <article className="card border-0 shadow-sm rounded-4 mb-4">
-          {post.image && <img src={`http://localhost:5000${post.image}`} className="card-img-top rounded-top-4" alt="post" style={{ maxHeight: 400, objectFit: 'cover' }} />}
+          {post.image && <img src={`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}${post.image}`} className="card-img-top rounded-top-4" alt="post" style={{ maxHeight: 400, objectFit: 'cover' }} />}
           <div className="card-body p-4 p-lg-5">
             <h1 className="fw-bold">{post.title}</h1>
             <div className="d-flex align-items-center text-muted mb-4">

@@ -33,7 +33,7 @@ export default function Posts() {
             <div key={post._id} className="col-md-6 col-lg-4">
               <div className="card h-100 shadow-sm border-0 rounded-4 post-card">
                 {post.image ? (
-                  <img src={`http://localhost:5000${post.image}`} className="card-img-top rounded-top-4" alt="post" style={{ height: 200, objectFit: 'cover' }} />
+                  <img src={`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}${post.image}`}className="card-img-top rounded-top-4" alt="post" style={{ height: 200, objectFit: 'cover' }} />
                 ) : (
                   <div className="card-img-placeholder rounded-top-4 d-flex align-items-center justify-content-center bg-light" style={{ height: 200 }}>
                     <i className="bi bi-image text-muted fs-1"></i>

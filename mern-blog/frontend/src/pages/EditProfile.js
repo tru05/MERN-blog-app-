@@ -48,7 +48,7 @@ export default function EditProfile() {
                 {preview ? (
                   <img src={preview} className="rounded-circle mb-2" width="100" height="100" style={{ objectFit: 'cover' }} alt="preview" />
                 ) : user?.avatar ? (
-                  <img src={`http://localhost:5000${user.avatar}`} className="rounded-circle mb-2" width="100" height="100" style={{ objectFit: 'cover' }} alt="avatar" />
+                  <img src={`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}${post.image}`} className="rounded-circle mb-2" width="100" height="100" style={{ objectFit: 'cover' }} alt="avatar" />
                 ) : (
                   <div className="avatar-placeholder rounded-circle mx-auto mb-2 d-flex align-items-center justify-content-center bg-primary text-white fs-2" style={{ width: 100, height: 100 }}>
                     {user?.name?.charAt(0).toUpperCase()}
