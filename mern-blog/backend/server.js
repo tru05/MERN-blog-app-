@@ -19,10 +19,19 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/posts', require('./routes/posts'));
 app.use('/api/profile', require('./routes/profile'));
 
+// ✅ ADD THIS (health check route)
+app.get("/", (req, res) => {
+  res.send("API is running 🚀");
+});
+
 // Error handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ message: err.message || 'Server Error' });
+});
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Backend running on http://localhost:${PORT}`));
 });
 
 const PORT = process.env.PORT || 5000;
